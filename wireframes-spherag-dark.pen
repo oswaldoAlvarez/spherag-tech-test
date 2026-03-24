@@ -1,0 +1,1891 @@
+{
+  "version": "2.9",
+  "children": [
+    {
+      "type": "frame",
+      "id": "board",
+      "x": 40,
+      "y": 40,
+      "name": "Spherag Mobile Flow",
+      "width": 1700,
+      "height": 1960,
+      "fill": {
+        "type": "gradient",
+        "gradientType": "linear",
+        "enabled": true,
+        "rotation": 180,
+        "size": {
+          "height": 1
+        },
+        "colors": [
+          {
+            "color": "#0A0C0B",
+            "position": 0
+          },
+          {
+            "color": "#111715",
+            "position": 1
+          }
+        ]
+      },
+      "cornerRadius": 36,
+      "layout": "none",
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "board_glow_a",
+          "x": 1040,
+          "y": 60,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1,
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#0E8D3E44",
+                "position": 0
+              },
+              {
+                "color": "#0A0C0B00",
+                "position": 1
+              }
+            ]
+          },
+          "width": 380,
+          "height": 380
+        },
+        {
+          "type": "ellipse",
+          "id": "board_glow_b",
+          "x": 120,
+          "y": 1210,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1,
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#0E8D3E33",
+                "position": 0
+              },
+              {
+                "color": "#0A0C0B00",
+                "position": 1
+              }
+            ]
+          },
+          "width": 420,
+          "height": 420
+        },
+        {
+          "type": "text",
+          "id": "board_title",
+          "x": 70,
+          "y": 58,
+          "fill": "#F3F7F4",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Spherag mobile flow",
+          "fontFamily": "Inter",
+          "fontSize": 40,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "board_copy",
+          "x": 70,
+          "y": 110,
+          "fill": "#8E9B95",
+          "textGrowth": "fixed-width",
+          "width": 760,
+          "content": "Darker board, less glare, and a more coherent fintech-inspired flow across login, fincas, Atlas list and Atlas detail.",
+          "lineHeight": 1.45,
+          "fontFamily": "Inter",
+          "fontSize": 15,
+          "fontWeight": "500"
+        },
+        {
+          "type": "text",
+          "id": "label_login",
+          "x": 110,
+          "y": 192,
+          "fill": "#ECF4EF",
+          "content": "01  Login",
+          "fontFamily": "Inter",
+          "fontSize": 18,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "copy_login",
+          "x": 110,
+          "y": 220,
+          "fill": "#71807A",
+          "textGrowth": "fixed-width",
+          "width": 290,
+          "content": "Entry screen with softer glow, a single focused field and stronger hierarchy.",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "500"
+        },
+        {
+          "type": "text",
+          "id": "label_fincas",
+          "x": 540,
+          "y": 192,
+          "fill": "#ECF4EF",
+          "content": "02  Fincas",
+          "fontFamily": "Inter",
+          "fontSize": 18,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "copy_fincas",
+          "x": 540,
+          "y": 220,
+          "fill": "#71807A",
+          "textGrowth": "fixed-width",
+          "width": 320,
+          "content": "Portfolio-like list of farms using deep cards, filters and a shared bottom navigation.",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "500"
+        },
+        {
+          "type": "text",
+          "id": "label_atlas",
+          "x": 110,
+          "y": 1068,
+          "fill": "#ECF4EF",
+          "content": "03  Atlas list",
+          "fontFamily": "Inter",
+          "fontSize": 18,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "copy_atlas",
+          "x": 110,
+          "y": 1096,
+          "fill": "#71807A",
+          "textGrowth": "fixed-width",
+          "width": 320,
+          "content": "Device stack with state chips, battery and signal emphasis, and contextual page controls.",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "500"
+        },
+        {
+          "type": "text",
+          "id": "label_detail",
+          "x": 540,
+          "y": 1068,
+          "fill": "#ECF4EF",
+          "content": "04  Atlas detail",
+          "fontFamily": "Inter",
+          "fontSize": 18,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "copy_detail",
+          "x": 540,
+          "y": 1096,
+          "fill": "#71807A",
+          "textGrowth": "fixed-width",
+          "width": 320,
+          "content": "A darker detail view with metrics, last location and field actions inspired by the Lemon asset flow.",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "500"
+        },
+        {
+          "type": "frame",
+          "id": "phone_login",
+          "x": 110,
+          "y": 262,
+          "width": 360,
+          "height": 760,
+          "fill": "#0D1211",
+          "cornerRadius": 44,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "screen_login",
+              "x": 14,
+              "y": 14,
+              "width": 332,
+              "height": 732,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 180,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#0A5B26",
+                    "position": 0
+                  },
+                  {
+                    "color": "#04110A",
+                    "position": 0.38
+                  },
+                  {
+                    "color": "#030403",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 32,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "login_time",
+                  "x": 24,
+                  "y": 24,
+                  "fill": "#BFC6C1",
+                  "content": "09:41",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "login_status",
+                  "x": 242,
+                  "y": 24,
+                  "fill": "#BFC6C1",
+                  "content": "5G  100%",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "login_back",
+                  "x": 18,
+                  "y": 18,
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#1E2321CC",
+                  "cornerRadius": 22,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "login_back_txt",
+                      "x": 16,
+                      "y": 11,
+                      "fill": "#F6F8F6",
+                      "content": "<",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "login_help",
+                  "x": 248,
+                  "y": 18,
+                  "width": 66,
+                  "height": 44,
+                  "fill": "#1E2321CC",
+                  "cornerRadius": 22,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "login_help_dot",
+                      "x": 10,
+                      "y": 15,
+                      "fill": "#1AE05F",
+                      "width": 12,
+                      "height": 12
+                    },
+                    {
+                      "type": "text",
+                      "id": "login_help_txt",
+                      "x": 26,
+                      "y": 12,
+                      "fill": "#F6F8F6",
+                      "content": "Ayuda",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "ellipse",
+                  "id": "login_glow",
+                  "x": 96,
+                  "y": 88,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "radial",
+                    "enabled": true,
+                    "rotation": 0,
+                    "size": {
+                      "width": 1,
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#1DB95455",
+                        "position": 0
+                      },
+                      {
+                        "color": "#0B1A1000",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "width": 140,
+                  "height": 140
+                },
+                {
+                  "type": "ellipse",
+                  "id": "login_logo_outer",
+                  "x": 122,
+                  "y": 116,
+                  "fill": "#F5F6F4",
+                  "width": 88,
+                  "height": 88
+                },
+                {
+                  "type": "ellipse",
+                  "id": "login_logo_inner",
+                  "x": 143,
+                  "y": 137,
+                  "fill": "#0D5F2C",
+                  "width": 46,
+                  "height": 46
+                },
+                {
+                  "type": "ellipse",
+                  "id": "login_logo_core",
+                  "x": 158,
+                  "y": 152,
+                  "fill": "#07110A",
+                  "width": 16,
+                  "height": 16
+                },
+                {
+                  "type": "text",
+                  "id": "login_title",
+                  "x": 42,
+                  "y": 238,
+                  "fill": "#F8FAF8",
+                  "textGrowth": "fixed-width",
+                  "width": 248,
+                  "content": "Inicia sesión",
+                  "lineHeight": 1.08,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "login_copy",
+                  "x": 37,
+                  "y": 290,
+                  "fill": "#AEB9B3",
+                  "textGrowth": "fixed-width",
+                  "width": 258,
+                  "content": "Ingresa el email y la contraseña provistos en la prueba técnica para continuar.",
+                  "lineHeight": 1.45,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "login_input",
+                  "x": 18,
+                  "y": 376,
+                  "width": 296,
+                  "height": 84,
+                  "fill": "#171818",
+                  "cornerRadius": 22,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 2,
+                    "fill": "#14C25A"
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "login_input_lbl",
+                      "x": 18,
+                      "y": 16,
+                      "fill": "#C8D0CA",
+                      "content": "Email",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "9RXAA",
+                      "x": 18,
+                      "y": 44,
+                      "name": "loginEmailValue",
+                      "fill": "#F5F7F5",
+                      "content": "apppruebatecnica@spherag.com",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "login_demo",
+                  "x": 86,
+                  "y": 580,
+                  "fill": "#18D45F",
+                  "textGrowth": "fixed-width",
+                  "width": 160,
+                  "content": "Usar credenciales del test",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "login_btn",
+                  "x": 18,
+                  "y": 626,
+                  "width": 296,
+                  "height": 58,
+                  "fill": "#F5F6F4",
+                  "cornerRadius": 20,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "login_btn_txt",
+                      "x": 114,
+                      "y": 20,
+                      "fill": "#111614",
+                      "content": "Continuar",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "login_footer",
+                  "x": 88,
+                  "y": 696,
+                  "fill": "#64726C",
+                  "textGrowth": "fixed-width",
+                  "width": 160,
+                  "content": "Acceso seguro Spherag",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "UB7VR",
+                  "x": 18,
+                  "y": 474,
+                  "name": "loginPassword",
+                  "width": 296,
+                  "height": 84,
+                  "fill": "#171818",
+                  "cornerRadius": 22,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#24302A"
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "1vBuw",
+                      "x": 18,
+                      "y": 16,
+                      "name": "loginPasswordLabel",
+                      "fill": "#C8D0CA",
+                      "content": "Contraseña",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "4sAmX",
+                      "x": 18,
+                      "y": 44,
+                      "name": "loginPasswordValue",
+                      "fill": "#F5F7F5",
+                      "content": "Usuario2026!",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "phone_fincas",
+          "x": 540,
+          "y": 262,
+          "width": 360,
+          "height": 760,
+          "fill": "#0D1211",
+          "cornerRadius": 44,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "screen_fincas",
+              "x": 14,
+              "y": 14,
+              "width": 332,
+              "height": 732,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 180,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#093B1C",
+                    "position": 0
+                  },
+                  {
+                    "color": "#050907",
+                    "position": 0.34
+                  },
+                  {
+                    "color": "#030403",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 32,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fincas_time",
+                  "x": 24,
+                  "y": 24,
+                  "fill": "#BFC6C1",
+                  "content": "09:41",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "fincas_status",
+                  "x": 242,
+                  "y": 24,
+                  "fill": "#BFC6C1",
+                  "content": "5G  100%",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "fincas_title",
+                  "x": 20,
+                  "y": 78,
+                  "fill": "#F7FAF8",
+                  "content": "Fincas",
+                  "fontFamily": "Inter",
+                  "fontSize": 30,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "fincas_search_btn",
+                  "x": 268,
+                  "y": 62,
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#1E2321CC",
+                  "cornerRadius": 22,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fincas_search_txt",
+                      "x": 13,
+                      "y": 10,
+                      "fill": "#F6F8F6",
+                      "content": "Q",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "fincas_tabs",
+                  "x": 20,
+                  "y": 118,
+                  "fill": "#D8E1DB",
+                  "content": "Favoritas   Todas",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "line",
+                  "id": "fincas_tab_line",
+                  "x": 20,
+                  "y": 146,
+                  "width": 74,
+                  "height": 0,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 2,
+                    "fill": "#F4F6F4"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "fincas_summary",
+                  "x": 20,
+                  "y": 172,
+                  "width": 292,
+                  "height": 72,
+                  "fill": "#141716",
+                  "cornerRadius": 24,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "fincas_summary_dot",
+                      "x": 18,
+                      "y": 18,
+                      "fill": "#19C55A",
+                      "width": 36,
+                      "height": 36
+                    },
+                    {
+                      "type": "text",
+                      "id": "fincas_summary_title",
+                      "x": 70,
+                      "y": 18,
+                      "fill": "#F5F8F6",
+                      "content": "12 fincas conectadas",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "fincas_summary_copy",
+                      "x": 70,
+                      "y": 40,
+                      "fill": "#93A39C",
+                      "content": "3 favoritas listas para revisar",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "finca_card_1",
+                  "x": 20,
+                  "y": 266,
+                  "width": 292,
+                  "height": 102,
+                  "fill": "#101211",
+                  "cornerRadius": 24,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#1C2421"
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "finca_card_1_thumb",
+                      "x": 16,
+                      "y": 16,
+                      "width": 64,
+                      "height": 70,
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 180,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#1A6D38",
+                            "position": 0
+                          },
+                          {
+                            "color": "#0E2D19",
+                            "position": 1
+                          }
+                        ]
+                      },
+                      "cornerRadius": 18,
+                      "layout": "none"
+                    },
+                    {
+                      "type": "text",
+                      "id": "finca_card_1_title",
+                      "x": 96,
+                      "y": 18,
+                      "fill": "#F5F8F6",
+                      "content": "Finca de Manzanos",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "finca_card_1_date",
+                      "x": 96,
+                      "y": 42,
+                      "fill": "#93A39C",
+                      "content": "Creada el 14 Apr 2025",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "finca_card_1_chip",
+                      "x": 96,
+                      "y": 60,
+                      "width": 78,
+                      "height": 24,
+                      "fill": "#123120",
+                      "cornerRadius": 12,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "finca_card_1_chip_txt",
+                          "x": 12,
+                          "y": 6,
+                          "fill": "#1CE05F",
+                          "content": "Favorita",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "finca_card_1_arrow",
+                      "x": 244,
+                      "y": 36,
+                      "fill": "#F5F8F6",
+                      "content": ">",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "finca_card_2",
+                  "x": 20,
+                  "y": 382,
+                  "width": 292,
+                  "height": 102,
+                  "fill": "#101211",
+                  "cornerRadius": 24,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#1C2421"
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "finca_card_2_thumb",
+                      "x": 16,
+                      "y": 16,
+                      "width": 64,
+                      "height": 70,
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 180,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#274D7A",
+                            "position": 0
+                          },
+                          {
+                            "color": "#101A27",
+                            "position": 1
+                          }
+                        ]
+                      },
+                      "cornerRadius": 18,
+                      "layout": "none"
+                    },
+                    {
+                      "type": "text",
+                      "id": "finca_card_2_title",
+                      "x": 96,
+                      "y": 18,
+                      "fill": "#F5F8F6",
+                      "content": "Finca Los Olivos",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "finca_card_2_date",
+                      "x": 96,
+                      "y": 42,
+                      "fill": "#93A39C",
+                      "content": "Creada el 03 Jan 2026",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "finca_card_2_meta",
+                      "x": 96,
+                      "y": 64,
+                      "fill": "#7E8A85",
+                      "content": "No favorita",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "finca_card_2_arrow",
+                      "x": 244,
+                      "y": 36,
+                      "fill": "#F5F8F6",
+                      "content": ">",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fincas_nav",
+                  "x": 20,
+                  "y": 612,
+                  "width": 292,
+                  "height": 86,
+                  "fill": "#111312",
+                  "cornerRadius": 30,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fincas_nav_home",
+                      "x": 28,
+                      "y": 51,
+                      "fill": "#74807B",
+                      "content": "Inicio",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "fincas_nav_fincas",
+                      "x": 92,
+                      "y": 51,
+                      "fill": "#F5F8F6",
+                      "content": "Fincas",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "fincas_nav_center",
+                      "x": 126,
+                      "y": 10,
+                      "fill": "#1AE05F",
+                      "width": 40,
+                      "height": 40
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "fincas_nav_ring",
+                      "x": 120,
+                      "y": 4,
+                      "fill": "#1AE05F22",
+                      "width": 52,
+                      "height": 52,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#1AE05F55"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "fincas_nav_atlas",
+                      "x": 186,
+                      "y": 51,
+                      "fill": "#74807B",
+                      "content": "Atlas",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "fincas_nav_cuenta",
+                      "x": 246,
+                      "y": 51,
+                      "fill": "#74807B",
+                      "content": "Cuenta",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "phone_atlas",
+          "x": 110,
+          "y": 1138,
+          "width": 360,
+          "height": 760,
+          "fill": "#0D1211",
+          "cornerRadius": 44,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "screen_atlas",
+              "x": 14,
+              "y": 14,
+              "width": 332,
+              "height": 732,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 180,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#093B1C",
+                    "position": 0
+                  },
+                  {
+                    "color": "#050907",
+                    "position": 0.34
+                  },
+                  {
+                    "color": "#030403",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 32,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "atlas_time",
+                  "x": 24,
+                  "y": 24,
+                  "fill": "#BFC6C1",
+                  "content": "09:41",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "atlas_status",
+                  "x": 242,
+                  "y": 24,
+                  "fill": "#BFC6C1",
+                  "content": "5G  100%",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "atlas_back",
+                  "x": 18,
+                  "y": 18,
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#1E2321CC",
+                  "cornerRadius": 22,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "atlas_back_txt",
+                      "x": 16,
+                      "y": 11,
+                      "fill": "#F6F8F6",
+                      "content": "<",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "atlas_title",
+                  "x": 20,
+                  "y": 80,
+                  "fill": "#F7FAF8",
+                  "content": "Atlas",
+                  "fontFamily": "Inter",
+                  "fontSize": 30,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "atlas_subtitle",
+                  "x": 20,
+                  "y": 116,
+                  "fill": "#95A49D",
+                  "content": "Finca de Manzanos",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "atlas_tab_active",
+                  "x": 20,
+                  "y": 150,
+                  "width": 92,
+                  "height": 30,
+                  "fill": "#F5F6F4",
+                  "cornerRadius": 15,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "atlas_tab_active_txt",
+                      "x": 14,
+                      "y": 9,
+                      "fill": "#111614",
+                      "content": "Activos",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "atlas_tab_idle",
+                  "x": 120,
+                  "y": 150,
+                  "width": 88,
+                  "height": 30,
+                  "fill": "#131514",
+                  "cornerRadius": 15,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#232B28"
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "atlas_tab_idle_txt",
+                      "x": 18,
+                      "y": 9,
+                      "fill": "#8E9A94",
+                      "content": "Offline",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "atlas_card_1",
+                  "x": 20,
+                  "y": 204,
+                  "width": 292,
+                  "height": 138,
+                  "fill": "#121514",
+                  "cornerRadius": 26,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "atlas_card_1_title",
+                      "x": 18,
+                      "y": 18,
+                      "fill": "#F5F8F6",
+                      "content": "Atlas X",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "atlas_card_1_imei",
+                      "x": 18,
+                      "y": 42,
+                      "fill": "#93A39C",
+                      "content": "IMEI 860813074958872",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "atlas_card_1_battery",
+                      "x": 18,
+                      "y": 68,
+                      "width": 88,
+                      "height": 28,
+                      "fill": "#123120",
+                      "cornerRadius": 14,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "atlas_card_1_battery_txt",
+                          "x": 14,
+                          "y": 8,
+                          "fill": "#1CE05F",
+                          "content": "38% bateria",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "atlas_card_1_signal",
+                      "x": 114,
+                      "y": 68,
+                      "width": 88,
+                      "height": 28,
+                      "fill": "#171A19",
+                      "cornerRadius": 14,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "atlas_card_1_signal_txt",
+                          "x": 16,
+                          "y": 8,
+                          "fill": "#E9EFEA",
+                          "content": "100% senal",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "atlas_card_1_exp",
+                      "x": 18,
+                      "y": 110,
+                      "fill": "#93A39C",
+                      "content": "Expira 05 Feb 2031",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "atlas_card_1_arrow",
+                      "x": 252,
+                      "y": 62,
+                      "fill": "#F5F8F6",
+                      "content": ">",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "atlas_card_2",
+                  "x": 20,
+                  "y": 356,
+                  "width": 292,
+                  "height": 138,
+                  "fill": "#121514",
+                  "cornerRadius": 26,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "atlas_card_2_title",
+                      "x": 18,
+                      "y": 18,
+                      "fill": "#F5F8F6",
+                      "content": "Atlas Plus",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "atlas_card_2_imei",
+                      "x": 18,
+                      "y": 42,
+                      "fill": "#93A39C",
+                      "content": "IMEI 865648065109613",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "atlas_card_2_battery",
+                      "x": 18,
+                      "y": 68,
+                      "width": 88,
+                      "height": 28,
+                      "fill": "#123120",
+                      "cornerRadius": 14,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "atlas_card_2_battery_txt",
+                          "x": 14,
+                          "y": 8,
+                          "fill": "#1CE05F",
+                          "content": "97% bateria",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "atlas_card_2_signal",
+                      "x": 114,
+                      "y": 68,
+                      "width": 88,
+                      "height": 28,
+                      "fill": "#171A19",
+                      "cornerRadius": 14,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "atlas_card_2_signal_txt",
+                          "x": 16,
+                          "y": 8,
+                          "fill": "#E9EFEA",
+                          "content": "100% senal",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "atlas_card_2_exp",
+                      "x": 18,
+                      "y": 110,
+                      "fill": "#93A39C",
+                      "content": "Expira 05 Feb 2031",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "atlas_card_2_arrow",
+                      "x": 252,
+                      "y": 62,
+                      "fill": "#F5F8F6",
+                      "content": ">",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "atlas_nav",
+                  "x": 20,
+                  "y": 612,
+                  "width": 292,
+                  "height": 86,
+                  "fill": "#111312",
+                  "cornerRadius": 30,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "atlas_nav_home",
+                      "x": 28,
+                      "y": 51,
+                      "fill": "#74807B",
+                      "content": "Inicio",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "atlas_nav_fincas",
+                      "x": 88,
+                      "y": 51,
+                      "fill": "#74807B",
+                      "content": "Fincas",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "atlas_nav_center",
+                      "x": 126,
+                      "y": 10,
+                      "fill": "#1AE05F",
+                      "width": 40,
+                      "height": 40
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "atlas_nav_ring",
+                      "x": 120,
+                      "y": 4,
+                      "fill": "#1AE05F22",
+                      "width": 52,
+                      "height": 52,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#1AE05F55"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "atlas_nav_atlas",
+                      "x": 186,
+                      "y": 51,
+                      "fill": "#F5F8F6",
+                      "content": "Atlas",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "atlas_nav_cuenta",
+                      "x": 246,
+                      "y": 51,
+                      "fill": "#74807B",
+                      "content": "Cuenta",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "phone_detail",
+          "x": 540,
+          "y": 1138,
+          "width": 360,
+          "height": 760,
+          "fill": "#0D1211",
+          "cornerRadius": 44,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "screen_detail",
+              "x": 14,
+              "y": 14,
+              "width": 332,
+              "height": 732,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 180,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#093B1C",
+                    "position": 0
+                  },
+                  {
+                    "color": "#050907",
+                    "position": 0.3
+                  },
+                  {
+                    "color": "#030403",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 32,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "detail_time",
+                  "x": 24,
+                  "y": 24,
+                  "fill": "#BFC6C1",
+                  "content": "09:41",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "detail_status",
+                  "x": 242,
+                  "y": 24,
+                  "fill": "#BFC6C1",
+                  "content": "5G  100%",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "detail_back",
+                  "x": 18,
+                  "y": 18,
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#1E2321CC",
+                  "cornerRadius": 22,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "detail_back_txt",
+                      "x": 16,
+                      "y": 11,
+                      "fill": "#F6F8F6",
+                      "content": "<",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "detail_icon",
+                  "x": 270,
+                  "y": 18,
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#1E2321CC",
+                  "cornerRadius": 22,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "detail_icon_txt",
+                      "x": 15,
+                      "y": 10,
+                      "fill": "#F6F8F6",
+                      "content": "o",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "detail_title",
+                  "x": 20,
+                  "y": 80,
+                  "fill": "#F7FAF8",
+                  "content": "Atlas X",
+                  "fontFamily": "Inter",
+                  "fontSize": 30,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "detail_subtitle",
+                  "x": 20,
+                  "y": 116,
+                  "fill": "#95A49D",
+                  "content": "Dispositivo de campo",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "detail_metric",
+                  "x": 20,
+                  "y": 156,
+                  "fill": "#1CE05F",
+                  "content": "97%",
+                  "fontFamily": "Inter",
+                  "fontSize": 44,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "detail_metric_copy",
+                  "x": 116,
+                  "y": 172,
+                  "fill": "#95A49D",
+                  "content": "bateria",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "detail_status_card",
+                  "x": 20,
+                  "y": 226,
+                  "width": 292,
+                  "height": 110,
+                  "fill": "#161A18",
+                  "cornerRadius": 26,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "detail_status_card_title",
+                      "x": 18,
+                      "y": 16,
+                      "fill": "#F5F8F6",
+                      "content": "Estado de conexion",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "detail_signal_chip",
+                      "x": 18,
+                      "y": 46,
+                      "width": 82,
+                      "height": 28,
+                      "fill": "#123120",
+                      "cornerRadius": 14,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "detail_signal_chip_txt",
+                          "x": 14,
+                          "y": 8,
+                          "fill": "#1CE05F",
+                          "content": "100% senal",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "detail_sync_chip",
+                      "x": 108,
+                      "y": 46,
+                      "width": 68,
+                      "height": 28,
+                      "fill": "#1F2322",
+                      "cornerRadius": 14,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "detail_sync_chip_txt",
+                          "x": 14,
+                          "y": 8,
+                          "fill": "#E9EFEA",
+                          "content": "2m sync",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "detail_status_card_copy",
+                      "x": 18,
+                      "y": 84,
+                      "fill": "#93A39C",
+                      "content": "IMEI 860813074958872",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "detail_map",
+                  "x": 20,
+                  "y": 354,
+                  "width": 292,
+                  "height": 238,
+                  "fill": "#141716",
+                  "cornerRadius": 28,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "detail_map_title",
+                      "x": 18,
+                      "y": 16,
+                      "fill": "#F5F8F6",
+                      "content": "Ultima ubicacion",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "detail_map_blob_a",
+                      "x": 26,
+                      "y": 68,
+                      "fill": "#0F2617",
+                      "width": 82,
+                      "height": 82
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "detail_map_blob_b",
+                      "x": 188,
+                      "y": 56,
+                      "fill": "#123120",
+                      "width": 86,
+                      "height": 86
+                    },
+                    {
+                      "type": "line",
+                      "id": "detail_map_route_a",
+                      "x": 72,
+                      "y": 154,
+                      "width": 132,
+                      "height": 0,
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 2,
+                        "fill": "#2D8C52"
+                      }
+                    },
+                    {
+                      "type": "line",
+                      "id": "detail_map_route_b",
+                      "x": 160,
+                      "y": 108,
+                      "width": 0,
+                      "height": 84,
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 2,
+                        "fill": "#2D8C52"
+                      }
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "detail_map_pin",
+                      "x": 144,
+                      "y": 112,
+                      "fill": "#1AE05F",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "detail_map_pin_core",
+                      "x": 154,
+                      "y": 122,
+                      "fill": "#09100B",
+                      "width": 12,
+                      "height": 12
+                    },
+                    {
+                      "type": "text",
+                      "id": "detail_map_lat",
+                      "x": 18,
+                      "y": 198,
+                      "fill": "#B7C2BC",
+                      "content": "Lat 40.4381658",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "detail_map_lng",
+                      "x": 176,
+                      "y": 198,
+                      "fill": "#B7C2BC",
+                      "content": "Lng -3.6194063",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "detail_btn_primary",
+                  "x": 20,
+                  "y": 612,
+                  "width": 140,
+                  "height": 58,
+                  "fill": "#F5F6F4",
+                  "cornerRadius": 20,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "detail_btn_primary_txt",
+                      "x": 34,
+                      "y": 20,
+                      "fill": "#111614",
+                      "content": "Ver historial",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "detail_btn_secondary",
+                  "x": 172,
+                  "y": 612,
+                  "width": 140,
+                  "height": 58,
+                  "fill": "#141716",
+                  "cornerRadius": 20,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#232B28"
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "detail_btn_secondary_txt",
+                      "x": 45,
+                      "y": 20,
+                      "fill": "#F2F6F3",
+                      "content": "Volver",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "detail_footer",
+                  "x": 88,
+                  "y": 692,
+                  "fill": "#64726C",
+                  "textGrowth": "fixed-width",
+                  "width": 160,
+                  "content": "Acceso seguro Spherag",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

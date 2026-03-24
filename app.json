@@ -1,22 +1,25 @@
 {
   "expo": {
-    "name": "spherag-tech-test",
+    "name": "Spherag",
     "slug": "spherag-tech-test",
+    "scheme": "spherag",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#050706"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.oswaldoalvarez.spheragtechtest"
     },
     "android": {
+      "package": "com.oswaldoalvarez.spheragtechtest",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#101412",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -24,7 +27,19 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#050706",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180
+        }
+      ]
+    ]
   }
 }
