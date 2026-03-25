@@ -7,17 +7,14 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#050706"
-    },
     "ios": {
+      "icon": "./assets/icon.png",
       "supportsTablet": true,
       "bundleIdentifier": "com.oswaldoalvarez.spheragtechtest"
     },
     "android": {
       "package": "com.oswaldoalvarez.spheragtechtest",
+      "softwareKeyboardLayoutMode": "resize",
       "adaptiveIcon": {
         "backgroundColor": "#101412",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -32,14 +29,7 @@
     },
     "plugins": [
       "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "backgroundColor": "#050706",
-          "image": "./assets/splash-icon.png",
-          "imageWidth": 180
-        }
-      ]
+      "expo-secure-store"
     ]
   }
 }
