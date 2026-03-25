@@ -1,5 +1,7 @@
 import { Redirect } from 'expo-router';
 
-const IndexRoute = () => <Redirect href="/login" />;
+import { routes } from '../shared/config/routes';
+
+const IndexRoute = () => <Redirect href={routes.login} />;
 
 export default IndexRoute;
