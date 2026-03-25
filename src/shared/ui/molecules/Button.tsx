@@ -38,10 +38,7 @@ export const Button = ({
 
   return (
     <Pressable
-      className={cn(
-        containerClasses[variant],
-        className,
-      )}
+      className={cn(containerClasses[variant], className)}
       android_ripple={
         variant === 'primary'
           ? { color: colors.rippleDarkSoft, borderless: false }

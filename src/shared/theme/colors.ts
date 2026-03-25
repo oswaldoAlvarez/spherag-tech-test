@@ -8,4 +8,3 @@ export const colors = {
   inkDarkest: '#07110A',
   rippleDarkSoft: 'rgba(16, 20, 18, 0.08)',
 } as const;
-

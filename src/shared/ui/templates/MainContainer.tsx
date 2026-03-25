@@ -40,14 +40,18 @@ export const MainContainer = ({
               bounces={false}
               className="flex-1"
               contentContainerClassName={contentClassName}
-              keyboardDismissMode={Platform.OS === 'ios' ? 'interactive' : 'on-drag'}
+              keyboardDismissMode={
+                Platform.OS === 'ios' ? 'interactive' : 'on-drag'
+              }
               keyboardShouldPersistTaps="handled"
               showsVerticalScrollIndicator={false}
             >
               {children}
             </ScrollView>
           ) : (
-            <View className={cn('flex-1 px-gutter pb-10 pt-4', className)}>{children}</View>
+            <View className={cn('flex-1 px-gutter pb-10 pt-4', className)}>
+              {children}
+            </View>
           )}
         </KeyboardAvoidingView>
       </TouchableWithoutFeedback>

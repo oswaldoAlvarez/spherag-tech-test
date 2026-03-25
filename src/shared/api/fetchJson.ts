@@ -10,7 +10,8 @@ type FetchJsonOptions = {
 
 const NETWORK_ERROR_MESSAGE =
   'No pudimos conectarnos al servidor. Inténtalo de nuevo en unos segundos.';
-const INVALID_RESPONSE_MESSAGE = 'Recibimos una respuesta inválida del servidor.';
+const INVALID_RESPONSE_MESSAGE =
+  'Recibimos una respuesta inválida del servidor.';
 const DEFAULT_ERROR_MESSAGE = 'Ocurrió un error al procesar la solicitud.';
 
 export const fetchJson = async <T>(

@@ -1,8 +1,4 @@
-import {
-  Alert,
-  View,
-  type TextInputProps,
-} from 'react-native';
+import { Alert, View, type TextInputProps } from 'react-native';
 
 import { useLoginForm } from '../hooks/useLoginForm';
 import { TextView } from '../../../shared/ui/atoms/TextView';
@@ -30,7 +26,9 @@ export const LoginForm = ({ className, onLoginSuccess }: LoginFormProps) => {
     submit,
   } = useLoginForm({ onLoginSuccess });
 
-  const handlePasswordSubmit: NonNullable<TextInputProps['onSubmitEditing']> = () => {
+  const handlePasswordSubmit: NonNullable<
+    TextInputProps['onSubmitEditing']
+  > = () => {
     submit();
   };
 

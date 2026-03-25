@@ -9,11 +9,7 @@ const HomeRoute = () => (
       <TextView align="center" variant="title">
         Home
       </TextView>
-      <TextView
-        align="center"
-        className="mt-3 max-w-[280px]"
-        tone="secondary"
-      >
+      <TextView align="center" className="mt-3 max-w-[280px]" tone="secondary">
         El inicio de sesión fue correcto y la sesión quedó guardada.
       </TextView>
     </View>
