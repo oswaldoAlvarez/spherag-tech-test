@@ -1,26 +1,20 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { useRouter } from 'expo-router';
-import { useState } from 'react';
-import { Platform, View } from 'react-native';
+import { useCallback, useState } from 'react';
+import { FlatList, type ListRenderItem } from 'react-native';
 
 import { FarmCard } from '../../features/farms/components/FarmCard';
-import {
-  FarmsEmptyState,
-  FarmsErrorState,
-  FarmsLoadingState,
-} from '../../features/farms/components/FarmsStates';
+import { FarmsEmptyState } from '../../features/farms/components/FarmsEmptyState';
+import { FarmsErrorState } from '../../features/farms/components/FarmsErrorState';
+import { FarmsListFooter } from '../../features/farms/components/FarmsListFooter';
+import { FarmsListHeader } from '../../features/farms/components/FarmsListHeader';
+import { FarmsLoadingState } from '../../features/farms/components/FarmsLoadingState';
 import { useFarms } from '../../features/farms/hooks/useFarms';
 import type { Farm } from '../../features/farms/types';
 import { routes } from '../../shared/config/routes';
 import { clearAuthSession } from '../../shared/lib/authSession';
-import { cn } from '../../shared/lib/cn';
-import { GlowOrb } from '../../shared/ui/atoms/GlowOrb';
-import { TextView } from '../../shared/ui/atoms/TextView';
-import { Button } from '../../shared/ui/molecules/Button';
-import {
-  UnderlineTabs,
-  type UnderlineTabOption,
-} from '../../shared/ui/molecules/UnderlineTabs';
+import { ListItemSeparator } from '../../shared/ui/molecules/ListItemSeparator';
+import { type UnderlineTabOption } from '../../shared/ui/molecules/UnderlineTabs';
 import { MainContainer } from '../../shared/ui/templates/MainContainer';
 
 const FARMS_FILTERS = {
@@ -31,14 +25,18 @@ const FARMS_FILTERS = {
 type FarmsFilter = keyof typeof FARMS_FILTERS;
 
 const DEFAULT_FARMS_ERROR_MESSAGE = 'No pudimos cargar las fincas.';
-const FOOTER_HINT_CLASSNAME_BY_PLATFORM = Platform.select({
-  android: 'self-center pb-1',
-  default: 'self-center pb-6',
-});
+
+const FARMS_LIST_ITEM_SEPARATOR_STYLE = {
+  height: 16,
+};
+const FARM_CARD_HEIGHT = 110;
+
+const FARMS_ITEM_LENGTH =
+  FARM_CARD_HEIGHT + FARMS_LIST_ITEM_SEPARATOR_STYLE.height;
 
 const farmsTabOptions: UnderlineTabOption<FarmsFilter>[] = [
   {
-    indicatorWidthClassName: 'w-[74px]',
+    indicatorWidthClassName: 'w-[44px]',
     label: 'Favoritas',
     value: FARMS_FILTERS.favorites,
   },
@@ -53,7 +51,7 @@ const FincasRoute = () => {
   const router = useRouter();
   const queryClient = useQueryClient();
   const [activeFilter, setActiveFilter] = useState<FarmsFilter>(
-    FARMS_FILTERS.favorites
+    FARMS_FILTERS.all
   );
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [isRetrying, setIsRetrying] = useState(false);
@@ -62,6 +60,7 @@ const FincasRoute = () => {
   const favoriteFarms = farms.filter((farm) => farm.isFavorite);
   const visibleFarms =
     activeFilter === FARMS_FILTERS.favorites ? favoriteFarms : farms;
+  const farmsListData = isPending || isError ? [] : visibleFarms;
   const farmsErrorMessage =
     error instanceof Error ? error.message : DEFAULT_FARMS_ERROR_MESSAGE;
 
@@ -91,72 +90,67 @@ const FincasRoute = () => {
     void handleRetry();
   };
 
-  const renderFarmCard = (farm: Farm) => {
-    return <FarmCard key={farm.id} farm={farm} />;
-  };
+  const renderFarmCard = useCallback<ListRenderItem<Farm>>(
+    ({ item }) => {
+      const handlePress = () => {
+        router.push(routes.atlas(item.id, item.name));
+      };
+
+      return <FarmCard farm={item} onPress={handlePress} />;
+    },
+    [router]
+  );
+
+  const extractFarmKey = useCallback((item: Farm) => item.id, []);
+
+  const getFarmItemLayout = useCallback(
+    (_: ArrayLike<Farm> | null | undefined, index: number) => ({
+      index,
+      length: FARMS_ITEM_LENGTH,
+      offset: FARMS_ITEM_LENGTH * index,
+    }),
+    []
+  );
+
+  const listEmptyState = isPending ? (
+    <FarmsLoadingState />
+  ) : isError ? (
+    <FarmsErrorState
+      isRetrying={isRetrying}
+      message={farmsErrorMessage}
+      onRetry={handleRetryPress}
+    />
+  ) : (
+    <FarmsEmptyState activeFilter={activeFilter} />
+  );
 
   return (
-    <MainContainer scroll className="pb-16">
-      <View className="relative">
-        <GlowOrb className="left-36 top-2 h-72 w-72" tone="medium" />
-        <GlowOrb className="-right-16 top-40 h-72 w-72" tone="soft" />
-
-        <View className="flex-row items-center justify-between pt-4">
-          <TextView variant="title">Fincas</TextView>
-
-          <Button
-            className="min-h-0 rounded-full bg-overlay px-4 py-3"
-            label={isLoggingOut ? 'Saliendo...' : 'Salir'}
-            loading={isLoggingOut}
-            onPress={handleLogout}
-            variant="transparent"
+    <MainContainer className="px-0 pb-0 pt-0" dismissKeyboardOnPress={false}>
+      <FlatList
+        data={farmsListData}
+        getItemLayout={getFarmItemLayout}
+        ItemSeparatorComponent={ListItemSeparator}
+        keyExtractor={extractFarmKey}
+        keyboardDismissMode="on-drag"
+        keyboardShouldPersistTaps="handled"
+        ListEmptyComponent={listEmptyState}
+        ListFooterComponent={FarmsListFooter}
+        ListHeaderComponent={
+          <FarmsListHeader
+            activeFilter={activeFilter}
+            favoritesCount={favoriteFarms.length}
+            isLoggingOut={isLoggingOut}
+            onChangeFilter={setActiveFilter}
+            onLogout={handleLogout}
+            options={farmsTabOptions}
+            showSeparator={!isPending && !isError && visibleFarms.length > 0}
+            totalCount={farms.length}
           />
-        </View>
-
-        <UnderlineTabs
-          activeValue={activeFilter}
-          className="mt-6"
-          onChange={setActiveFilter}
-          options={farmsTabOptions}
-        />
-
-        <View className="mt-6 flex-row rounded-[24px] bg-surface-800 px-5 py-4">
-          <View className="mr-4 h-9 w-9 rounded-full bg-accent" />
-          <View className="flex-1">
-            <TextView variant="button">{`${farms.length} fincas conectadas`}</TextView>
-            <TextView className="mt-1" tone="secondary" variant="caption">
-              {`${favoriteFarms.length} favoritas listas para revisar`}
-            </TextView>
-          </View>
-        </View>
-
-        <View className="mt-6 min-h-[560px] justify-between">
-          <View>
-            {isPending ? (
-              <FarmsLoadingState />
-            ) : isError ? (
-              <FarmsErrorState
-                isRetrying={isRetrying}
-                message={farmsErrorMessage}
-                onRetry={handleRetryPress}
-              />
-            ) : visibleFarms.length === 0 ? (
-              <FarmsEmptyState activeFilter={activeFilter} />
-            ) : (
-              <View className="gap-4">{visibleFarms.map(renderFarmCard)}</View>
-            )}
-          </View>
-
-          <TextView
-            align="center"
-            className={cn(FOOTER_HINT_CLASSNAME_BY_PLATFORM)}
-            tone="secondary"
-            variant="label"
-          >
-            Selecciona una finca para ver sus Atlas.
-          </TextView>
-        </View>
-      </View>
+        }
+        renderItem={renderFarmCard}
+        showsVerticalScrollIndicator={false}
+        windowSize={11}
+      />
     </MainContainer>
   );
 };

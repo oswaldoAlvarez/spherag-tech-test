@@ -32,16 +32,13 @@ export const UnderlineTabs = <T extends string>({
 
       return (
         <Pressable key={option.value} onPress={handlePress}>
-          <TextView className={cn(!isActive && 'opacity-55')} variant="label">
+          <TextView
+            className={cn('text-[16px] leading-5', !isActive && 'opacity-55')}
+            variant="label"
+          >
             {option.label}
           </TextView>
-          <View
-            className={cn(
-              'mt-3 h-0.5 bg-transparent',
-              option.indicatorWidthClassName,
-              isActive && 'rounded-full bg-text-primary'
-            )}
-          />
+          <View className={cn('mt-2 h-[2px]', isActive && 'bg-text-primary')} />
         </Pressable>
       );
     })}
