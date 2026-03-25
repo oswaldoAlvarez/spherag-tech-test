@@ -13,8 +13,6 @@ module.exports = {
         overlay: 'rgba(31, 35, 33, 0.8)',
         accent: '#19D45F',
         'accent-glow-strong': 'rgba(25, 212, 95, 0.2)',
-        'accent-glow-medium': 'rgba(25, 212, 95, 0.15)',
-        'accent-glow-soft': 'rgba(25, 212, 95, 0.1)',
         'accent-deep': '#0E7D34',
         'button-primary': '#F3F5F2',
         'border-default': '#24302A',
