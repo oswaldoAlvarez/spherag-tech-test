@@ -25,12 +25,13 @@ export const MainContainer = ({
   keyboardVerticalOffset = 0,
 }: MainContainerProps) => {
   const contentClassName = cn('flex-grow px-gutter pb-10 pt-4', className);
+  const keyboardBehavior = Platform.OS === 'ios' ? 'padding' : 'height';
 
   return (
     <SafeAreaView className="flex-1 bg-background">
       <TouchableWithoutFeedback accessible={false} onPress={Keyboard.dismiss}>
         <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          behavior={keyboardBehavior}
           className="flex-1"
           keyboardVerticalOffset={keyboardVerticalOffset}
         >

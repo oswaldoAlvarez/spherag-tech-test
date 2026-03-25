@@ -1,5 +1,6 @@
 import { forwardRef, useState } from 'react';
 import {
+  type KeyboardTypeOptions,
   TextInput,
   View,
   type ReturnKeyTypeOptions,
@@ -7,16 +8,21 @@ import {
 } from 'react-native';
 
 import { cn } from '../../lib/cn';
+import { colors } from '../../theme/colors';
 import { TextView } from '../atoms/TextView';
 
-type AuthFieldType = 'email' | 'password';
-
 type AuthFieldProps = {
+  editable?: boolean;
   label: string;
   value: string;
-  type: AuthFieldType;
   placeholder: string;
+  autoCapitalize?: TextInputProps['autoCapitalize'];
+  autoComplete?: TextInputProps['autoComplete'];
+  autoCorrect?: boolean;
+  keyboardType?: KeyboardTypeOptions;
   returnKeyType?: ReturnKeyTypeOptions;
+  submitBehavior?: TextInputProps['submitBehavior'];
+  textContentType?: TextInputProps['textContentType'];
   onChangeText: (text: string) => void;
   onSubmitEditing?: TextInputProps['onSubmitEditing'];
 };
@@ -24,11 +30,17 @@ type AuthFieldProps = {
 export const AuthField = forwardRef<TextInput, AuthFieldProps>(
   (
     {
+      editable = true,
       label,
       value,
-      type,
       placeholder,
+      autoCapitalize = 'none',
+      autoComplete = 'email',
+      autoCorrect = false,
+      keyboardType = 'email-address',
       returnKeyType,
+      submitBehavior,
+      textContentType = 'emailAddress',
       onChangeText,
       onSubmitEditing,
     },
@@ -48,17 +60,18 @@ export const AuthField = forwardRef<TextInput, AuthFieldProps>(
         </TextView>
         <TextInput
           ref={ref}
-          autoCapitalize="none"
-          autoComplete={type === 'email' ? 'email' : 'password'}
-          autoCorrect={false}
+          autoCapitalize={autoCapitalize}
+          autoComplete={autoComplete}
+          autoCorrect={autoCorrect}
           className="mt-2 p-0 text-base font-medium text-text-primary"
-          keyboardType={type === 'email' ? 'email-address' : 'default'}
+          editable={editable}
+          keyboardType={keyboardType}
           placeholder={placeholder}
-          placeholderTextColor="#71807A"
+          placeholderTextColor={colors.textMuted}
           returnKeyType={returnKeyType}
-          secureTextEntry={type === 'password'}
-          selectionColor="#19D45F"
-          textContentType={type === 'email' ? 'emailAddress' : 'password'}
+          selectionColor={colors.accent}
+          submitBehavior={submitBehavior}
+          textContentType={textContentType}
           value={value}
           onBlur={() => setIsFocused(false)}
           onChangeText={onChangeText}

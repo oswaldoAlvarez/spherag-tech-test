@@ -3,7 +3,13 @@ import { Text, type TextProps } from 'react-native';
 import { cn } from '../../lib/cn';
 
 type TextViewVariant = 'title' | 'body' | 'label' | 'caption' | 'button';
-type TextViewTone = 'primary' | 'secondary' | 'muted' | 'accent' | 'dark';
+type TextViewTone =
+  | 'primary'
+  | 'secondary'
+  | 'muted'
+  | 'accent'
+  | 'danger'
+  | 'dark';
 type TextViewAlign = 'left' | 'center' | 'right';
 
 type TextViewProps = TextProps & {
@@ -26,6 +32,7 @@ const toneClasses: Record<TextViewTone, string> = {
   secondary: 'text-text-secondary',
   muted: 'text-text-muted',
   accent: 'text-accent',
+  danger: 'text-danger',
   dark: 'text-text-dark',
 };
 
