@@ -28,12 +28,12 @@ const labelTone: Record<ButtonVariant, 'accent' | 'dark'> = {
 
 const INACTIVE_BUTTON_STYLE = {
   opacity: 0.6,
-} as const;
+};
 
 const PRIMARY_BUTTON_RIPPLE = {
   borderless: false,
   color: colors.rippleDarkSoft,
-} as const;
+};
 
 export const Button = ({
   className,
