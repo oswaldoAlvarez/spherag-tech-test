@@ -2,6 +2,7 @@ export const colors = {
   accent: '#19D45F',
   accentDeep: '#0E7D34',
   buttonPrimary: '#F3F5F2',
+  textPrimary: '#F3F7F4',
   textMuted: '#71807A',
   textSecondary: '#9EADA6',
   textDark: '#101412',

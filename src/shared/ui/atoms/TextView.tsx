@@ -1,4 +1,9 @@
-import { Text, type TextProps } from 'react-native';
+import {
+  Text,
+  type StyleProp,
+  type TextProps,
+  type TextStyle,
+} from 'react-native';
 
 import { cn } from '../../lib/cn';
 
@@ -20,11 +25,11 @@ type TextViewProps = TextProps & {
 };
 
 const variantClasses: Record<TextViewVariant, string> = {
-  title: 'text-[34px] font-bold leading-[38px]',
-  body: 'text-[15px] font-medium leading-[22px]',
-  label: 'text-[13px] font-semibold leading-[18px]',
-  caption: 'text-xs font-semibold leading-4',
-  button: 'text-base font-bold leading-5',
+  title: 'text-[34px] leading-[38px]',
+  body: 'text-[15px] leading-[22px]',
+  label: 'text-[13px] leading-[18px]',
+  caption: 'text-xs leading-4',
+  button: 'text-base leading-5',
 };
 
 const toneClasses: Record<TextViewTone, string> = {
@@ -42,6 +47,14 @@ const alignClasses: Record<TextViewAlign, string> = {
   right: 'text-right',
 };
 
+const variantStyles: Record<TextViewVariant, StyleProp<TextStyle>> = {
+  title: { fontFamily: 'Nunito_800ExtraBold' },
+  body: { fontFamily: 'Nunito_500Medium' },
+  label: { fontFamily: 'Nunito_600SemiBold' },
+  caption: { fontFamily: 'Nunito_600SemiBold' },
+  button: { fontFamily: 'Nunito_700Bold' },
+};
+
 export const TextView = ({
   variant = 'body',
   tone = 'primary',
@@ -56,6 +69,7 @@ export const TextView = ({
       alignClasses[align],
       className
     )}
+    style={variantStyles[variant]}
     {...props}
   />
 );

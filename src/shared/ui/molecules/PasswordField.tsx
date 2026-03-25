@@ -38,6 +38,18 @@ export const PasswordField = forwardRef<TextInput, PasswordFieldProps>(
     const [isFocused, setIsFocused] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
+    const handleBlur = () => {
+      setIsFocused(false);
+    };
+
+    const handleFocus = () => {
+      setIsFocused(true);
+    };
+
+    const handleToggleVisibility = () => {
+      setIsVisible((current) => !current);
+    };
+
     return (
       <View
         className={cn(
@@ -64,9 +76,9 @@ export const PasswordField = forwardRef<TextInput, PasswordFieldProps>(
             selectionColor={colors.accent}
             textContentType="password"
             value={value}
-            onBlur={() => setIsFocused(false)}
+            onBlur={handleBlur}
             onChangeText={onChangeText}
-            onFocus={() => setIsFocused(true)}
+            onFocus={handleFocus}
             onSubmitEditing={onSubmitEditing}
           />
 
@@ -74,7 +86,7 @@ export const PasswordField = forwardRef<TextInput, PasswordFieldProps>(
             className="ml-3 h-9 w-9 items-center justify-center rounded-full bg-surface-700"
             disabled={!editable}
             hitSlop={8}
-            onPress={() => setIsVisible((current) => !current)}
+            onPress={handleToggleVisibility}
           >
             <Ionicons
               color={colors.textSecondary}

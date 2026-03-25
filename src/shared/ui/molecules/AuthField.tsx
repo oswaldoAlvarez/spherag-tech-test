@@ -48,6 +48,14 @@ export const AuthField = forwardRef<TextInput, AuthFieldProps>(
   ) => {
     const [isFocused, setIsFocused] = useState(false);
 
+    const handleBlur = () => {
+      setIsFocused(false);
+    };
+
+    const handleFocus = () => {
+      setIsFocused(true);
+    };
+
     return (
       <View
         className={cn(
@@ -73,9 +81,9 @@ export const AuthField = forwardRef<TextInput, AuthFieldProps>(
           submitBehavior={submitBehavior}
           textContentType={textContentType}
           value={value}
-          onBlur={() => setIsFocused(false)}
+          onBlur={handleBlur}
           onChangeText={onChangeText}
-          onFocus={() => setIsFocused(true)}
+          onFocus={handleFocus}
           onSubmitEditing={onSubmitEditing}
         />
       </View>

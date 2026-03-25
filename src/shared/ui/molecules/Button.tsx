@@ -26,6 +26,15 @@ const labelTone: Record<ButtonVariant, 'accent' | 'dark'> = {
   transparent: 'accent',
 };
 
+const INACTIVE_BUTTON_STYLE = {
+  opacity: 0.6,
+} as const;
+
+const PRIMARY_BUTTON_RIPPLE = {
+  borderless: false,
+  color: colors.rippleDarkSoft,
+} as const;
+
 export const Button = ({
   className,
   disabled = false,
@@ -39,14 +48,10 @@ export const Button = ({
   return (
     <Pressable
       className={cn(containerClasses[variant], className)}
-      android_ripple={
-        variant === 'primary'
-          ? { color: colors.rippleDarkSoft, borderless: false }
-          : undefined
-      }
+      android_ripple={variant === 'primary' ? PRIMARY_BUTTON_RIPPLE : undefined}
       disabled={isInactive}
       onPress={onPress}
-      style={isInactive ? { opacity: 0.6 } : undefined}
+      style={isInactive ? INACTIVE_BUTTON_STYLE : undefined}
     >
       {loading && variant === 'primary' ? (
         <ActivityIndicator color={colors.textDark} />
