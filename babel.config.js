@@ -1,10 +1,13 @@
 module.exports = function (api) {
-  api.cache(true);
+  api.cache.using(() => process.env.NODE_ENV);
+  const isTest = api.env('test');
 
   return {
-    presets: [
-      ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
-      'nativewind/babel',
-    ],
+    presets: isTest
+      ? ['babel-preset-expo']
+      : [
+          ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
+          'nativewind/babel',
+        ],
   };
 };
