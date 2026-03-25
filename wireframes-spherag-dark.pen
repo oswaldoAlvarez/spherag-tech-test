@@ -157,7 +157,7 @@
           "fill": "#71807A",
           "textGrowth": "fixed-width",
           "width": 320,
-          "content": "Portfolio-like list of farms using deep cards, filters and a shared bottom navigation.",
+          "content": "Farm list with deep cards, lightweight filters and a direct drill-down into Atlas.",
           "fontFamily": "Inter",
           "fontSize": 13,
           "fontWeight": "500"
@@ -923,84 +923,17 @@
                   ]
                 },
                 {
-                  "type": "frame",
-                  "id": "fincas_nav",
+                  "type": "text",
+                  "id": "fincas_flow_hint",
                   "x": 20,
-                  "y": 612,
-                  "width": 292,
-                  "height": 86,
-                  "fill": "#111312",
-                  "cornerRadius": 30,
-                  "layout": "none",
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "fincas_nav_home",
-                      "x": 28,
-                      "y": 51,
-                      "fill": "#74807B",
-                      "content": "Inicio",
-                      "fontFamily": "Inter",
-                      "fontSize": 11,
-                      "fontWeight": "600"
-                    },
-                    {
-                      "type": "text",
-                      "id": "fincas_nav_fincas",
-                      "x": 92,
-                      "y": 51,
-                      "fill": "#F5F8F6",
-                      "content": "Fincas",
-                      "fontFamily": "Inter",
-                      "fontSize": 11,
-                      "fontWeight": "700"
-                    },
-                    {
-                      "type": "ellipse",
-                      "id": "fincas_nav_center",
-                      "x": 126,
-                      "y": 10,
-                      "fill": "#1AE05F",
-                      "width": 40,
-                      "height": 40
-                    },
-                    {
-                      "type": "ellipse",
-                      "id": "fincas_nav_ring",
-                      "x": 120,
-                      "y": 4,
-                      "fill": "#1AE05F22",
-                      "width": 52,
-                      "height": 52,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#1AE05F55"
-                      }
-                    },
-                    {
-                      "type": "text",
-                      "id": "fincas_nav_atlas",
-                      "x": 186,
-                      "y": 51,
-                      "fill": "#74807B",
-                      "content": "Atlas",
-                      "fontFamily": "Inter",
-                      "fontSize": 11,
-                      "fontWeight": "600"
-                    },
-                    {
-                      "type": "text",
-                      "id": "fincas_nav_cuenta",
-                      "x": 246,
-                      "y": 51,
-                      "fill": "#74807B",
-                      "content": "Cuenta",
-                      "fontFamily": "Inter",
-                      "fontSize": 11,
-                      "fontWeight": "600"
-                    }
-                  ]
+                  "y": 616,
+                  "fill": "#8FA099",
+                  "textGrowth": "fixed-width",
+                  "width": 220,
+                  "content": "Selecciona una finca para ver sus Atlas.",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
                 }
               ]
             }
@@ -1383,81 +1316,52 @@
                 },
                 {
                   "type": "frame",
-                  "id": "atlas_nav",
+                  "id": "atlas_pagination_strip",
                   "x": 20,
                   "y": 612,
                   "width": 292,
-                  "height": 86,
+                  "height": 58,
                   "fill": "#111312",
-                  "cornerRadius": 30,
+                  "cornerRadius": 20,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#232B28"
+                  },
                   "layout": "none",
                   "children": [
                     {
                       "type": "text",
-                      "id": "atlas_nav_home",
-                      "x": 28,
-                      "y": 51,
-                      "fill": "#74807B",
-                      "content": "Inicio",
+                      "id": "atlas_pagination_prev",
+                      "x": 20,
+                      "y": 20,
+                      "fill": "#8E9A94",
+                      "content": "Anterior",
                       "fontFamily": "Inter",
-                      "fontSize": 11,
+                      "fontSize": 12,
                       "fontWeight": "600"
                     },
                     {
                       "type": "text",
-                      "id": "atlas_nav_fincas",
-                      "x": 88,
-                      "y": 51,
-                      "fill": "#74807B",
-                      "content": "Fincas",
-                      "fontFamily": "Inter",
-                      "fontSize": 11,
-                      "fontWeight": "600"
-                    },
-                    {
-                      "type": "ellipse",
-                      "id": "atlas_nav_center",
-                      "x": 126,
-                      "y": 10,
-                      "fill": "#1AE05F",
-                      "width": 40,
-                      "height": 40
-                    },
-                    {
-                      "type": "ellipse",
-                      "id": "atlas_nav_ring",
-                      "x": 120,
-                      "y": 4,
-                      "fill": "#1AE05F22",
-                      "width": 52,
-                      "height": 52,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#1AE05F55"
-                      }
-                    },
-                    {
-                      "type": "text",
-                      "id": "atlas_nav_atlas",
-                      "x": 186,
-                      "y": 51,
+                      "id": "atlas_pagination_current",
+                      "x": 124,
+                      "y": 20,
                       "fill": "#F5F8F6",
-                      "content": "Atlas",
+                      "content": "1 / 3",
                       "fontFamily": "Inter",
-                      "fontSize": 11,
+                      "fontSize": 12,
                       "fontWeight": "700"
                     },
                     {
                       "type": "text",
-                      "id": "atlas_nav_cuenta",
-                      "x": 246,
-                      "y": 51,
-                      "fill": "#74807B",
-                      "content": "Cuenta",
+                      "id": "atlas_pagination_next",
+                      "x": 228,
+                      "y": 20,
+                      "fill": "#F5F8F6",
+                      "content": "Siguiente",
                       "fontFamily": "Inter",
-                      "fontSize": 11,
-                      "fontWeight": "600"
+                      "fontSize": 12,
+                      "fontWeight": "700"
                     }
                   ]
                 }
