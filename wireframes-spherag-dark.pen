@@ -543,6 +543,10 @@
                   "height": 72,
                   "fill": "#141716",
                   "cornerRadius": 24,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
                   "layout": "none",
                   "children": [
                     {
