@@ -2,6 +2,14 @@
 
 React Native mobile app built with Expo and TypeScript for the Spherag technical assignment.
 
+<img width="454" height="869" alt="Captura de pantalla 2026-03-26 a la(s) 15 47 27" src="https://github.com/user-attachments/assets/ff25838f-8e66-44a6-8d6c-441dc0df4e68" />
+
+<img width="435" height="841" alt="Captura de pantalla 2026-03-26 a la(s) 15 47 38" src="https://github.com/user-attachments/assets/5c5dc73d-89ed-4994-8a3c-9c1864b49837" />
+
+<img width="431" height="868" alt="Captura de pantalla 2026-03-26 a la(s) 15 47 48" src="https://github.com/user-attachments/assets/f7d69883-bec2-4d08-8377-2c0cb69f3c04" />
+
+<img width="440" height="841" alt="Captura de pantalla 2026-03-26 a la(s) 15 48 22" src="https://github.com/user-attachments/assets/88a8aa35-81ee-448e-baa1-912a04310874" />
+
 ## Overview
 
 The app implements the full requested flow:
