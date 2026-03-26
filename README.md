@@ -91,7 +91,3 @@ npm run format:check
 - Query state is handled with TanStack Query.
 - Authentication data is stored securely on device.
 - The intended targets are Android and iOS through Expo.
-
-## Author
-
-Oswaldo Alvarez
