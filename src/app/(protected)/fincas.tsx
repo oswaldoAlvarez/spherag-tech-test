@@ -4,8 +4,6 @@ import { useCallback, useState } from 'react';
 import { FlatList, type ListRenderItem } from 'react-native';
 
 import { FarmCard } from '../../features/farms/components/FarmCard';
-import { FarmsEmptyState } from '../../features/farms/components/FarmsEmptyState';
-import { FarmsErrorState } from '../../features/farms/components/FarmsErrorState';
 import { FarmsListFooter } from '../../features/farms/components/FarmsListFooter';
 import { FarmsListHeader } from '../../features/farms/components/FarmsListHeader';
 import { FarmsLoadingState } from '../../features/farms/components/FarmsLoadingState';
@@ -13,6 +11,8 @@ import { useFarms } from '../../features/farms/hooks/useFarms';
 import type { Farm } from '../../features/farms/types';
 import { routes } from '../../shared/config/routes';
 import { clearAuthSession } from '../../shared/lib/authSession';
+import { EmptyStateCard } from '../../shared/ui/molecules/EmptyStateCard';
+import { ErrorStateCard } from '../../shared/ui/molecules/ErrorStateCard';
 import { ListItemSeparator } from '../../shared/ui/molecules/ListItemSeparator';
 import { type UnderlineTabOption } from '../../shared/ui/molecules/UnderlineTabs';
 import { MainContainer } from '../../shared/ui/templates/MainContainer';
@@ -25,6 +25,13 @@ const FARMS_FILTERS = {
 type FarmsFilter = keyof typeof FARMS_FILTERS;
 
 const DEFAULT_FARMS_ERROR_MESSAGE = 'No pudimos cargar las fincas.';
+const EMPTY_FAVORITES_MESSAGE =
+  'Prueba cambiando a la vista de todas para revisar el resto del listado.';
+const EMPTY_FAVORITES_TITLE = 'No hay favoritas por mostrar';
+const EMPTY_FARMS_MESSAGE =
+  'Cuando haya sistemas disponibles, se mostrarán aquí.';
+const EMPTY_FARMS_TITLE = 'No hay fincas disponibles';
+const FARMS_ERROR_TITLE = 'No pudimos cargar las fincas';
 
 const FARMS_LIST_ITEM_SEPARATOR_STYLE = {
   height: 16,
@@ -63,6 +70,14 @@ const FincasRoute = () => {
   const farmsListData = isPending || isError ? [] : visibleFarms;
   const farmsErrorMessage =
     error instanceof Error ? error.message : DEFAULT_FARMS_ERROR_MESSAGE;
+  const emptyFarmsMessage =
+    activeFilter === FARMS_FILTERS.favorites
+      ? EMPTY_FAVORITES_MESSAGE
+      : EMPTY_FARMS_MESSAGE;
+  const emptyFarmsTitle =
+    activeFilter === FARMS_FILTERS.favorites
+      ? EMPTY_FAVORITES_TITLE
+      : EMPTY_FARMS_TITLE;
 
   const handleLogout = async () => {
     setIsLoggingOut(true);
@@ -115,13 +130,14 @@ const FincasRoute = () => {
   const listEmptyState = isPending ? (
     <FarmsLoadingState />
   ) : isError ? (
-    <FarmsErrorState
+    <ErrorStateCard
       isRetrying={isRetrying}
       message={farmsErrorMessage}
       onRetry={handleRetryPress}
+      title={FARMS_ERROR_TITLE}
     />
   ) : (
-    <FarmsEmptyState activeFilter={activeFilter} />
+    <EmptyStateCard message={emptyFarmsMessage} title={emptyFarmsTitle} />
   );
 
   return (

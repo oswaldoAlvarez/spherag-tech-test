@@ -3,21 +3,22 @@ import { useCallback, useState } from 'react';
 import { FlatList, type ListRenderItem } from 'react-native';
 
 import { AtlasCard } from '../../../features/atlas/components/AtlasCard';
-import { AtlasEmptyState } from '../../../features/atlas/components/AtlasEmptyState';
-import { AtlasErrorState } from '../../../features/atlas/components/AtlasErrorState';
 import { AtlasListFooter } from '../../../features/atlas/components/AtlasListFooter';
 import { AtlasListHeader } from '../../../features/atlas/components/AtlasListHeader';
 import { AtlasLoadingState } from '../../../features/atlas/components/AtlasLoadingState';
 import { useAtlas } from '../../../features/atlas/hooks/useAtlas';
 import type { AtlasDevice } from '../../../features/atlas/types';
 import { routes } from '../../../shared/config/routes';
+import { EmptyStateCard } from '../../../shared/ui/molecules/EmptyStateCard';
+import { ErrorStateCard } from '../../../shared/ui/molecules/ErrorStateCard';
 import { ListItemSeparator } from '../../../shared/ui/molecules/ListItemSeparator';
 import { MainContainer } from '../../../shared/ui/templates/MainContainer';
 
 const DEFAULT_ATLAS_ERROR_MESSAGE =
   'No pudimos cargar los Atlas de esta finca.';
-
 const DEFAULT_FARM_NAME = 'Esta finca';
+const ATLAS_EMPTY_TITLE = 'No hay Atlas disponibles';
+const ATLAS_ERROR_TITLE = 'No pudimos cargar los Atlas';
 
 const ATLAS_LIST_ITEM_SEPARATOR_STYLE = {
   height: 16,
@@ -50,6 +51,10 @@ const AtlasRoute = () => {
 
   const atlasErrorMessage =
     error instanceof Error ? error.message : DEFAULT_ATLAS_ERROR_MESSAGE;
+
+  const emptyAtlasMessage = farmName
+    ? `${selectedFarmName} todavía no tiene Atlas asociados.`
+    : 'Esta finca todavía no tiene Atlas asociados.';
 
   const atlasListData = isPending || isError ? [] : atlasItems;
 
@@ -105,13 +110,14 @@ const AtlasRoute = () => {
   const listEmptyState = isPending ? (
     <AtlasLoadingState />
   ) : isError ? (
-    <AtlasErrorState
+    <ErrorStateCard
       isRetrying={isRetrying}
       message={atlasErrorMessage}
       onRetry={handleRetry}
+      title={ATLAS_ERROR_TITLE}
     />
   ) : (
-    <AtlasEmptyState farmName={selectedFarmName} />
+    <EmptyStateCard message={emptyAtlasMessage} title={ATLAS_EMPTY_TITLE} />
   );
 
   return (
