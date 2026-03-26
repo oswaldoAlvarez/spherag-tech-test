@@ -27,3 +27,30 @@ export type AtlasDevice = {
   signalPercentage: number;
   expiredDateLabel: string;
 };
+
+export type AtlasDetailApiResponse = {
+  imei: string;
+  name: string;
+  type: number;
+  productTypeName: string;
+  systemId: number;
+  latitude: string;
+  longitude: string;
+  batteryPercentage: number;
+  signalPercentage: number;
+  expiredDate: string;
+  atlasStatus: number;
+  energyMode: number;
+  connectors: Record<string, unknown>;
+};
+
+export type AtlasDetail = {
+  batteryPercentage: number;
+  expiredDateLabel: string;
+  imei: string;
+  latitude: number | null;
+  longitude: number | null;
+  name: string;
+  productTypeName: string;
+  signalPercentage: number;
+};

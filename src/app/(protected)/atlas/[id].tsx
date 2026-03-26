@@ -82,9 +82,13 @@ const AtlasRoute = () => {
 
   const renderAtlasCard = useCallback<ListRenderItem<AtlasDevice>>(
     ({ item }) => {
-      return <AtlasCard atlas={item} />;
+      const handlePress = () => {
+        router.push(routes.atlasDetail(id, item.imei, selectedFarmName));
+      };
+
+      return <AtlasCard atlas={item} onPress={handlePress} />;
     },
-    []
+    [id, router, selectedFarmName]
   );
 
   const extractAtlasKey = useCallback((item: AtlasDevice) => item.id, []);
