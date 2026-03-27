@@ -1,10 +1,9 @@
 import { View } from 'react-native';
 
 import type { AtlasDetail } from '../types';
-import { AtlasMetricsRow } from './AtlasMetricsRow';
+import { AtlasSummaryCard } from './AtlasSummaryCard';
 import { TextView } from '../../../shared/ui/atoms/TextView';
 import { BackButton } from '../../../shared/ui/molecules/BackButton';
-import { SurfaceCard } from '../../../shared/ui/molecules/SurfaceCard';
 
 type AtlasDetailSummaryProps = {
   atlas: AtlasDetail;
@@ -29,18 +28,14 @@ export const AtlasDetailSummary = ({
       </TextView>
     </View>
 
-    <SurfaceCard className="mt-6">
-      <TextView variant="button">{atlas.productTypeName}</TextView>
-      <TextView className="mt-2" tone="secondary" variant="caption">
-        {`IMEI ${atlas.imei}`}
-      </TextView>
-      <AtlasMetricsRow
-        batteryPercentage={atlas.batteryPercentage}
-        signalPercentage={atlas.signalPercentage}
-      />
-      <TextView className="mt-4" tone="secondary" variant="caption">
-        {atlas.expiredDateLabel}
-      </TextView>
-    </SurfaceCard>
+    <AtlasSummaryCard
+      batteryPercentage={atlas.batteryPercentage}
+      className="mt-6"
+      expiredDateLabel={atlas.expiredDateLabel}
+      imei={atlas.imei}
+      signalPercentage={atlas.signalPercentage}
+      title={atlas.productTypeName}
+      titleNumberOfLines={2}
+    />
   </>
 );

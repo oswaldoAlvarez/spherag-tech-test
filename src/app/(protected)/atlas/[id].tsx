@@ -2,10 +2,10 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { FlatList, type ListRenderItem } from 'react-native';
 
-import { AtlasCard } from '../../../features/atlas/components/AtlasCard';
 import { AtlasListFooter } from '../../../features/atlas/components/AtlasListFooter';
 import { AtlasListHeader } from '../../../features/atlas/components/AtlasListHeader';
 import { AtlasLoadingState } from '../../../features/atlas/components/AtlasLoadingState';
+import { AtlasSummaryCard } from '../../../features/atlas/components/AtlasSummaryCard';
 import { useAtlas } from '../../../features/atlas/hooks/useAtlas';
 import type { AtlasDevice } from '../../../features/atlas/types';
 import { routes } from '../../../shared/config/routes';
@@ -91,7 +91,17 @@ const AtlasRoute = () => {
         router.push(routes.atlasDetail(id, item.imei, selectedFarmName));
       };
 
-      return <AtlasCard atlas={item} onPress={handlePress} />;
+      return (
+        <AtlasSummaryCard
+          batteryPercentage={item.batteryPercentage}
+          expiredDateLabel={item.expiredDateLabel}
+          imei={item.imei}
+          onPress={handlePress}
+          signalPercentage={item.signalPercentage}
+          tagLabel="Atlas"
+          title={item.name}
+        />
+      );
     },
     [id, router, selectedFarmName]
   );
