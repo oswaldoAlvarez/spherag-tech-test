@@ -54,6 +54,20 @@ src/
   shared/
 ```
 
+## Architecture Notes
+
+This project follows a domain-oriented structure inspired by Feature-Sliced Design:
+
+- `app/` contains route files and screen composition.
+- `features/` contains domain-specific logic, hooks, API modules, and UI for each feature.
+- `shared/` contains reusable UI primitives, utilities, configuration, and cross-feature helpers.
+
+Reusable UI is organized with an atomic-style hierarchy to keep components easy to discover and scale:
+
+- `atoms/` for basic building blocks such as text and icons.
+- `molecules/` for small composed UI pieces such as buttons, cards, and feedback states.
+- `templates/` for layout wrappers shared across screens.
+
 ## Getting Started
 
 ### 1. Install dependencies
